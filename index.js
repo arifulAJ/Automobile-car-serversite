@@ -17,6 +17,7 @@ async function run(){
         const database = client.db("rolls-royce");
         const brandNewCollection = database.collection("cars-stor");
         const shippingCollection=database.collection("shipping")
+        const reviewCollection=database.collection("review")
 
         // get api
         app.get('/cars',async(req,res)=>{
@@ -40,6 +41,22 @@ async function run(){
             res.json(result)
 
         })
+        app.get('/review',async(req,res)=>{
+            const cursor= reviewCollection.find({})
+            const result=await cursor.toArray()
+            res.json(result)
+         
+           
+            console.log(result)
+        })
+        //delete
+        app.delete('/myOrder/:id',async(req,res)=>{
+            const id=req.params.id
+            const query={_id:ObjectId(id)}
+            const result=await shippingCollection.deleteOne(query)
+            res.json(result)
+            console.log("deliting user",id)
+        })
 
         //post 
         app.post('/shiping',async(req,res)=>{
@@ -49,6 +66,14 @@ async function run(){
             console.log(result)
           
         })
+        app.post('/review',async(req,res)=>{
+            const user=req.body
+            const result=await reviewCollection.insertOne(user)
+            res.json(result)
+            console.log(result)
+        })
+        //get
+       
 
     }
     finally{
