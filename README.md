@@ -4,7 +4,7 @@
 
 
 # This is the Automobile car company server site.
-## techonology are uses 
+## techonology are uses  for server site
 <li> JavaScript</li>
 
 
