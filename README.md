@@ -3,16 +3,10 @@
 
 
 
-# This is the Automobile car company.
+# This is the Automobile car company server site.
 ## techonology are uses 
 <li> JavaScript</li>
-<li> React.js</li>
-<li> Bootstrap </li>
-<li> Node.js</li>
-<li> Mongo DB</li>
-<li> Html</li>
-<li> CSS</li>
-<li> Firebase</li>
+
 
 # Automobile-car-serversite
 live site: https://rolls-royce-car.web.app/
